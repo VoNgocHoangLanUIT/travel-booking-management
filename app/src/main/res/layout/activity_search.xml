@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F7F7F7">
@@ -10,20 +11,22 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <TextView
+        <ImageView
             android:id="@+id/btnBackSearch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="← Back"
-            android:textColor="#111111"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_airbnb_circle_light"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="8dp"
+            android:src="@drawable/ic_back"
+            app:tint="#111111" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
-            android:text="Search stay"
+            android:text="Tìm kiếm chỗ ở"
             android:textColor="#111111"
             android:textSize="26sp"
             android:textStyle="bold" />
@@ -39,7 +42,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Destination"
+                android:text="Điểm đến"
                 android:textColor="#717171"
                 android:textSize="12sp" />
 
@@ -47,7 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:text="Da Nang, Viet Nam"
+                android:text="Đà Lạt, Việt Nam"
                 android:textColor="#111111"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -70,7 +73,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Check in"
+                    android:text="Nhận phòng"
                     android:textColor="#717171"
                     android:textSize="12sp" />
 
@@ -78,7 +81,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
-                    android:text="20 Aug"
+                    android:text="13 thg 4"
                     android:textColor="#111111"
                     android:textSize="17sp"
                     android:textStyle="bold" />
@@ -99,7 +102,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Check out"
+                    android:text="Trả phòng"
                     android:textColor="#717171"
                     android:textSize="12sp" />
 
@@ -107,7 +110,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
-                    android:text="22 Aug"
+                    android:text="14 thg 4"
                     android:textColor="#111111"
                     android:textSize="17sp"
                     android:textStyle="bold" />
@@ -132,7 +135,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Guests"
+                    android:text="Khách"
                     android:textColor="#717171"
                     android:textSize="12sp" />
 
@@ -141,7 +144,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
-                    android:text="2"
+                    android:text="1"
                     android:textColor="#111111"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -174,73 +177,13 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
-            android:text="Basic filters"
-            android:textColor="#111111"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:scrollbars="none">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:background="@drawable/bg_airbnb_chip_active"
-                    android:paddingLeft="16dp"
-                    android:paddingTop="10dp"
-                    android:paddingRight="16dp"
-                    android:paddingBottom="10dp"
-                    android:text="Entire place"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:background="@drawable/bg_airbnb_chip"
-                    android:paddingLeft="16dp"
-                    android:paddingTop="10dp"
-                    android:paddingRight="16dp"
-                    android:paddingBottom="10dp"
-                    android:text="Breakfast"
-                    android:textColor="#111111"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_airbnb_chip"
-                    android:paddingLeft="16dp"
-                    android:paddingTop="10dp"
-                    android:paddingRight="16dp"
-                    android:paddingBottom="10dp"
-                    android:text="Pool"
-                    android:textColor="#111111"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </HorizontalScrollView>
-
         <Button
             android:id="@+id/btnSearchRoom"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginTop="26dp"
             android:background="@drawable/bg_airbnb_button"
-            android:text="Show stays"
+            android:text="Hiển thị kết quả"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
             android:textSize="16sp"

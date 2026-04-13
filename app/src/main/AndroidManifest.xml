@@ -12,6 +12,8 @@
         <activity android:name=".activities.customer.BookingActivity" />
         <activity android:name=".activities.customer.RoomDetailActivity" />
         <activity android:name=".activities.customer.SearchActivity" />
+        <activity android:name=".activities.customer.SearchResultsActivity" />
+        <activity android:name=".activities.customer.WishlistActivity" />
 
         <activity
             android:name=".activities.customer.HomeActivity"

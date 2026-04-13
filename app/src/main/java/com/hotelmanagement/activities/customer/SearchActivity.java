@@ -3,6 +3,7 @@ package com.hotelmanagement.activities.customer;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,7 +20,7 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        TextView btnBack = findViewById(R.id.btnBackSearch);
+        ImageView btnBack = findViewById(R.id.btnBackSearch);
         TextView btnMinus = findViewById(R.id.btnMinusGuest);
         TextView btnPlus = findViewById(R.id.btnPlusGuest);
         tvGuestCount = findViewById(R.id.tvGuestCount);
@@ -40,6 +41,6 @@ public class SearchActivity extends AppCompatActivity {
         });
 
         btnSearch.setOnClickListener(v ->
-                startActivity(new Intent(this, RoomDetailActivity.class)));
+                startActivity(new Intent(this, SearchResultsActivity.class)));
     }
 }

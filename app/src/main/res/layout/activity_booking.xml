@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F7F7F7">
@@ -10,20 +11,22 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <TextView
+        <ImageView
             android:id="@+id/btnBackBooking"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="← Back"
-            android:textColor="#111111"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_airbnb_circle_light"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="8dp"
+            android:src="@drawable/ic_back"
+            app:tint="#111111" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
-            android:text="Confirm and pay"
+            android:text="Xác nhận và thanh toán"
             android:textColor="#111111"
             android:textSize="26sp"
             android:textStyle="bold" />
@@ -39,12 +42,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Your stay"
+                android:text="Thông tin đặt phòng"
                 android:textColor="#111111"
                 android:textSize="17sp"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvBookingRoomTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -53,18 +57,20 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/tvBookingStayInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Aug 20 - 22 • 2 nights"
+                android:text="13 thg 4 - 14 thg 4 • 1 đêm"
                 android:textColor="#717171"
                 android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/tvBookingGuestInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="2 guests"
+                android:text="1 khách"
                 android:textColor="#717171"
                 android:textSize="14sp" />
         </LinearLayout>
@@ -80,16 +86,17 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Price details"
+                android:text="Chi tiết giá"
                 android:textColor="#111111"
                 android:textSize="17sp"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvBookingBasePrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="$82 x 2 nights"
+                android:text="675.848đ x 1 đêm"
                 android:textColor="#555555"
                 android:textSize="14sp" />
 
@@ -97,7 +104,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:text="Cleaning fee: $12"
+                android:text="Phí vệ sinh: 50.000đ"
                 android:textColor="#555555"
                 android:textSize="14sp" />
 
@@ -105,7 +112,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:text="Service fee: $8"
+                android:text="Phí dịch vụ: 20.000đ"
                 android:textColor="#555555"
                 android:textSize="14sp" />
 
@@ -117,9 +124,10 @@
                 android:background="#EAEAEA" />
 
             <TextView
+                android:id="@+id/tvBookingTotalPrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Total: $184"
+                android:text="Tổng: 745.848đ"
                 android:textColor="#111111"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -131,7 +139,7 @@
             android:layout_height="56dp"
             android:layout_marginTop="26dp"
             android:background="@drawable/bg_airbnb_button"
-            android:text="Confirm booking"
+            android:text="Xác nhận đặt phòng"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
             android:textSize="16sp"

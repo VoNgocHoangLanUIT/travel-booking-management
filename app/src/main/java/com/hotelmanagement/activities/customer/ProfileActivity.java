@@ -1,7 +1,8 @@
 package com.hotelmanagement.activities.customer;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,7 +14,17 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        TextView btnBack = findViewById(R.id.btnBackProfile);
-        btnBack.setOnClickListener(v -> finish());
+        LinearLayout navSearch = findViewById(R.id.navSearch);
+        LinearLayout navWishlist = findViewById(R.id.navWishlist);
+
+        // Điều hướng footer bằng finish() để quay về Home với hiệu ứng Back mượt mà
+        navSearch.setOnClickListener(v -> {
+            finish();
+        });
+
+        navWishlist.setOnClickListener(v -> {
+            startActivity(new Intent(this, WishlistActivity.class));
+            finish();
+        });
     }
 }

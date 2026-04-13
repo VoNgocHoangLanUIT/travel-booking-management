@@ -2,26 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F7F7F7"
+    android:background="#FFFFFF"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="24dp">
 
     <TextView
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:background="@drawable/bg_airbnb_success_circle"
         android:gravity="center"
         android:text="✓"
         android:textColor="#FFFFFF"
-        android:textSize="36sp"
+        android:textSize="48sp"
         android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:text="Booking successful"
+        android:layout_marginTop="24dp"
+        android:text="Đặt phòng thành công"
         android:textColor="#111111"
         android:textSize="26sp"
         android:textStyle="bold" />
@@ -29,19 +29,20 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:gravity="center"
-        android:text="Your reservation has been saved.\nEnjoy your trip."
+        android:text="Thông tin đặt phòng của bạn đã được lưu lại.\nChúc bạn có một chuyến đi tuyệt vời!"
         android:textColor="#717171"
-        android:textSize="15sp" />
+        android:textSize="16sp"
+        android:lineSpacingExtra="4dp" />
 
     <Button
         android:id="@+id/btnBackHome"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/bg_airbnb_button"
-        android:text="Back to home"
+        android:text="Quay lại trang chủ"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
