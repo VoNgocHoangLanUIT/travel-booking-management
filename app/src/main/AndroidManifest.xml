@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="true"
+        android:label="HotelManagement"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HotelManagement">
+
+        <activity android:name=".activities.customer.ProfileActivity" />
+        <activity android:name=".activities.customer.BookingSuccessActivity" />
+        <activity android:name=".activities.customer.BookingActivity" />
+        <activity android:name=".activities.customer.RoomDetailActivity" />
+        <activity android:name=".activities.customer.SearchActivity" />
+
+        <activity
+            android:name=".activities.customer.HomeActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>
