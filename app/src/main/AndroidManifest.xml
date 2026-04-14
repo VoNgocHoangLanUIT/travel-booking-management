@@ -7,6 +7,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HotelManagement">
 
+        <activity
+            android:name=".activities.customer.SignInActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activities.customer.SignUpActivity" />
         <activity android:name=".activities.customer.ProfileActivity" />
         <activity android:name=".activities.customer.BookingSuccessActivity" />
         <activity android:name=".activities.customer.BookingActivity" />
@@ -14,15 +24,7 @@
         <activity android:name=".activities.customer.SearchActivity" />
         <activity android:name=".activities.customer.SearchResultsActivity" />
         <activity android:name=".activities.customer.WishlistActivity" />
-
-        <activity
-            android:name=".activities.customer.HomeActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".activities.customer.HomeActivity" />
 
     </application>
 

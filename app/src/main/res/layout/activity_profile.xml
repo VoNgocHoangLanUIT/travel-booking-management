@@ -55,7 +55,7 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Profile Header Card (Kích thước gốc nổi bật) -->
+            <!-- Profile Header Card -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -206,7 +206,6 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:padding="14dp">
-
                 <androidx.cardview.widget.CardView
                     android:layout_width="70dp"
                     android:layout_height="70dp"
@@ -218,14 +217,12 @@
                         android:scaleType="centerCrop"
                         android:src="@drawable/vungtau_2" />
                 </androidx.cardview.widget.CardView>
-
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="14dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -233,20 +230,17 @@
                         android:textColor="#111111"
                         android:textSize="15sp"
                         android:textStyle="bold" />
-
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
-
                         <ImageView
                             android:layout_width="12dp"
                             android:layout_height="12dp"
                             android:src="@drawable/ic_calendar"
                             app:tint="#717171" />
-
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -254,7 +248,6 @@
                             android:text="10 thg 7 - 12 thg 7 ·"
                             android:textColor="#717171"
                             android:textSize="12sp" />
-
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -267,7 +260,6 @@
                             android:textSize="10sp" />
                     </LinearLayout>
                 </LinearLayout>
-
                 <ImageView
                     android:layout_width="18dp"
                     android:layout_height="18dp"
@@ -284,7 +276,6 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:padding="14dp">
-
                 <androidx.cardview.widget.CardView
                     android:layout_width="70dp"
                     android:layout_height="70dp"
@@ -296,14 +287,12 @@
                         android:scaleType="centerCrop"
                         android:src="@drawable/dalat_1" />
                 </androidx.cardview.widget.CardView>
-
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="14dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -311,20 +300,17 @@
                         android:textColor="#111111"
                         android:textSize="15sp"
                         android:textStyle="bold" />
-
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
-
                         <ImageView
                             android:layout_width="12dp"
                             android:layout_height="12dp"
                             android:src="@drawable/ic_calendar"
                             app:tint="#717171" />
-
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -332,7 +318,6 @@
                             android:text="20 thg 8 - 22 thg 8 ·"
                             android:textColor="#717171"
                             android:textSize="12sp" />
-
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -345,7 +330,6 @@
                             android:textSize="10sp" />
                     </LinearLayout>
                 </LinearLayout>
-
                 <ImageView
                     android:layout_width="18dp"
                     android:layout_height="18dp"
@@ -353,7 +337,7 @@
                     app:tint="#CCCCCC" />
             </LinearLayout>
 
-            <!-- Booking Item 3 -->
+            <!-- Booking Item 3 (KHÔI PHỤC) -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -362,7 +346,6 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:padding="14dp">
-
                 <androidx.cardview.widget.CardView
                     android:layout_width="70dp"
                     android:layout_height="70dp"
@@ -374,14 +357,12 @@
                         android:scaleType="centerCrop"
                         android:src="@drawable/quynhon_2" />
                 </androidx.cardview.widget.CardView>
-
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="14dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -389,20 +370,17 @@
                         android:textColor="#111111"
                         android:textSize="15sp"
                         android:textStyle="bold" />
-
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
-
                         <ImageView
                             android:layout_width="12dp"
                             android:layout_height="12dp"
                             android:src="@drawable/ic_calendar"
                             app:tint="#717171" />
-
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -410,7 +388,6 @@
                             android:text="5 thg 9 - 8 thg 9 ·"
                             android:textColor="#717171"
                             android:textSize="12sp" />
-
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -423,13 +400,26 @@
                             android:textSize="10sp" />
                     </LinearLayout>
                 </LinearLayout>
-
                 <ImageView
                     android:layout_width="18dp"
                     android:layout_height="18dp"
                     android:src="@drawable/ic_arrow_right"
                     app:tint="#CCCCCC" />
             </LinearLayout>
+
+            <!-- NÚT ĐĂNG XUẤT -->
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bg_airbnb_button"
+                android:text="Đăng xuất"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
     </ScrollView>
@@ -460,15 +450,12 @@
                 android:orientation="vertical"
                 android:clickable="true"
                 android:focusable="true">
-
                 <ImageView
                     android:layout_width="26dp"
                     android:layout_height="26dp"
                     android:layout_marginBottom="2dp"
                     app:srcCompat="@drawable/ic_home_nav"
-                    app:tint="#8A8A8A"
-                    android:contentDescription="Trang chủ" />
-
+                    app:tint="#8A8A8A" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -486,15 +473,12 @@
                 android:orientation="vertical"
                 android:clickable="true"
                 android:focusable="true">
-
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_marginBottom="2dp"
                     app:srcCompat="@drawable/ic_heart_nav"
-                    app:tint="#8A8A8A"
-                    android:contentDescription="Yêu thích" />
-
+                    app:tint="#8A8A8A" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -510,15 +494,12 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
-
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_marginBottom="2dp"
                     app:srcCompat="@drawable/ic_profile_nav"
-                    app:tint="#FF385C"
-                    android:contentDescription="Hồ sơ" />
-
+                    app:tint="#FF385C" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
