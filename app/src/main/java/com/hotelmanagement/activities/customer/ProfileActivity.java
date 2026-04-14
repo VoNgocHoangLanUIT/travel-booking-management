@@ -14,11 +14,11 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        LinearLayout navSearch = findViewById(R.id.navSearch);
+        LinearLayout navHome = findViewById(R.id.navHome);
         LinearLayout navWishlist = findViewById(R.id.navWishlist);
 
         // Điều hướng footer bằng finish() để quay về Home với hiệu ứng Back mượt mà
-        navSearch.setOnClickListener(v -> {
+        navHome.setOnClickListener(v -> {
             finish();
         });
 

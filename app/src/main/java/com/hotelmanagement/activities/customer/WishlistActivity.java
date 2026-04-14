@@ -2,7 +2,6 @@ package com.hotelmanagement.activities.customer;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -25,14 +24,13 @@ public class WishlistActivity extends AppCompatActivity {
         setContentView(R.layout.activity_wishlist);
 
         RecyclerView rvWishlist = findViewById(R.id.rvWishlist);
-        LinearLayout navSearch = findViewById(R.id.navSearch);
+        LinearLayout navHome = findViewById(R.id.navHome);
         LinearLayout navProfile = findViewById(R.id.navProfile);
         TextView tvWishlistCount = findViewById(R.id.tvWishlistCount);
 
         // Điều hướng footer
-        // Thay vì dùng startActivity (tạo hiệu ứng mở mới), ta dùng finish() 
-        // để quay về Home với hiệu ứng "Back" (trượt sang phải)
-        navSearch.setOnClickListener(v -> {
+        // Sử dụng finish() để quay về Home với hiệu ứng Back
+        navHome.setOnClickListener(v -> {
             finish();
         });
 
@@ -44,7 +42,7 @@ public class WishlistActivity extends AppCompatActivity {
         // Thiết lập RecyclerView
         rvWishlist.setLayoutManager(new LinearLayoutManager(this));
 
-        // Dữ liệu giả lập cho danh sách yêu thích
+        // Dữ liệu giả lập
         List<Room> favoriteRooms = new ArrayList<>();
         favoriteRooms.add(new Room(
                 R.drawable.vungtau_1,
@@ -71,10 +69,7 @@ public class WishlistActivity extends AppCompatActivity {
                 true
         ));
 
-        // Cập nhật số lượng
         tvWishlistCount.setText(favoriteRooms.size() + " chỗ ở đã lưu");
-
-        // Sử dụng WishlistAdapter riêng
         rvWishlist.setAdapter(new WishlistAdapter(this, favoriteRooms));
     }
 }

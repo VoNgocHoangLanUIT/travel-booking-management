@@ -1,7 +1,9 @@
 package com.hotelmanagement.activities.customer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,8 +25,27 @@ public class SearchResultsActivity extends AppCompatActivity {
 
         ImageView btnBack = findViewById(R.id.btnBackResults);
         RecyclerView rvSearchResults = findViewById(R.id.rvSearchResults);
+        
+        LinearLayout navWishlist = findViewById(R.id.navWishlist);
+        LinearLayout navProfile = findViewById(R.id.navProfile);
+        LinearLayout navHome = findViewById(R.id.navHome);
 
         btnBack.setOnClickListener(v -> finish());
+
+        // ĐIỀU HƯỚNG FOOTER
+        navHome.setOnClickListener(v -> {
+            Intent intent = new Intent(this, HomeActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        });
+
+        navWishlist.setOnClickListener(v -> {
+            startActivity(new Intent(this, WishlistActivity.class));
+        });
+
+        navProfile.setOnClickListener(v -> {
+            startActivity(new Intent(this, ProfileActivity.class));
+        });
 
         // Thiết lập RecyclerView hiển thị theo chiều dọc (Vertical)
         rvSearchResults.setLayoutManager(new LinearLayoutManager(this));
