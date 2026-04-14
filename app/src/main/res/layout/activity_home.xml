@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingStart="16dp"
-            android:paddingTop="22dp"
+            android:paddingTop="40dp"
             android:paddingEnd="16dp"
             android:paddingBottom="22dp"
             android:background="#FFFFFF">
@@ -107,7 +107,6 @@
                 </FrameLayout>
             </LinearLayout>
 
-            <!-- section Vũng Tàu -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvVungTau"
                 android:layout_width="match_parent"
@@ -151,7 +150,6 @@
                 </FrameLayout>
             </LinearLayout>
 
-            <!-- section Đà Lạt -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvDaLat"
                 android:layout_width="match_parent"
@@ -195,7 +193,6 @@
                 </FrameLayout>
             </LinearLayout>
 
-            <!-- section Quy Nhơn -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvQuyNhon"
                 android:layout_width="match_parent"
@@ -237,14 +234,15 @@
                     android:layout_height="26dp"
                     android:layout_marginBottom="2dp"
                     app:srcCompat="@drawable/ic_search_nav"
+                    app:tint="#FF385C"
                     android:contentDescription="Tìm kiếm" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tìm kiếm"
+                    android:text="Khám phá"
                     android:textColor="#FF385C"
-                    android:textSize="13sp"
+                    android:textSize="12sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -254,7 +252,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:clickable="true"
+                android:focusable="true">
 
                 <ImageView
                     android:layout_width="24dp"
@@ -277,7 +277,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:clickable="true"
+                android:focusable="true">
 
                 <ImageView
                     android:layout_width="24dp"
