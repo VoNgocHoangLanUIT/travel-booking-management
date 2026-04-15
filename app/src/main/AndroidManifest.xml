@@ -25,6 +25,7 @@
         <activity android:name=".activities.customer.SearchResultsActivity" />
         <activity android:name=".activities.customer.WishlistActivity" />
         <activity android:name=".activities.customer.HomeActivity" />
+        <activity android:name=".activities.customer.NotificationsActivity" />
 
     </application>
 

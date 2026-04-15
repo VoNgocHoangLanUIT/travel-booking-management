@@ -3,6 +3,7 @@ package com.hotelmanagement.activities.customer;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +19,12 @@ public class ProfileActivity extends AppCompatActivity {
         LinearLayout navHome = findViewById(R.id.navHome);
         LinearLayout navWishlist = findViewById(R.id.navWishlist);
         Button btnLogout = findViewById(R.id.btnLogout);
+        ImageView btnNotifications = findViewById(R.id.btnNotifications);
+
+        // ĐIỀU HƯỚNG ĐẾN TRANG THÔNG BÁO
+        btnNotifications.setOnClickListener(v -> {
+            startActivity(new Intent(this, NotificationsActivity.class));
+        });
 
         // Điều hướng footer bằng finish() để quay về Home với hiệu ứng Back mượt mà
         navHome.setOnClickListener(v -> {
