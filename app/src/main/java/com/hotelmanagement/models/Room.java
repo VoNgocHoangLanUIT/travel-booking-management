@@ -1,6 +1,8 @@
 package com.hotelmanagement.models;
 
 public class Room {
+    private final long id;
+    private final String imageUri;
     private final int imageResId;
     private final String title;
     private final String meta;
@@ -9,12 +11,44 @@ public class Room {
     private boolean favorite;
 
     public Room(int imageResId, String title, String meta, String price, String badge, boolean favorite) {
+        this.id = 0L;
+        this.imageUri = null;
         this.imageResId = imageResId;
         this.title = title;
         this.meta = meta;
         this.price = price;
         this.badge = badge;
         this.favorite = favorite;
+    }
+
+    public Room(long id, int imageResId, String title, String meta, String price, String badge, boolean favorite) {
+        this.id = id;
+        this.imageUri = null;
+        this.imageResId = imageResId;
+        this.title = title;
+        this.meta = meta;
+        this.price = price;
+        this.badge = badge;
+        this.favorite = favorite;
+    }
+
+    public Room(long id, String imageUri, int imageResId, String title, String meta, String price, String badge, boolean favorite) {
+        this.id = id;
+        this.imageUri = imageUri;
+        this.imageResId = imageResId;
+        this.title = title;
+        this.meta = meta;
+        this.price = price;
+        this.badge = badge;
+        this.favorite = favorite;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getImageUri() {
+        return imageUri;
     }
 
     public int getImageResId() {

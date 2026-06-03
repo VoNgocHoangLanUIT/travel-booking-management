@@ -50,6 +50,7 @@
                 android:textSize="12sp" />
 
             <TextView
+                android:id="@+id/tvDestinationCity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
@@ -81,6 +82,7 @@
                     android:textSize="12sp" />
 
                 <TextView
+                    android:id="@+id/tvCheckInDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
@@ -110,6 +112,7 @@
                     android:textSize="12sp" />
 
                 <TextView
+                    android:id="@+id/tvCheckOutDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"

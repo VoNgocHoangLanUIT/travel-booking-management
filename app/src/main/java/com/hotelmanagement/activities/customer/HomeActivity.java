@@ -10,21 +10,31 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.hotelmanagement.R;
 import com.hotelmanagement.adapters.RoomAdapter;
+import com.hotelmanagement.database.AppDatabase;
+import com.hotelmanagement.database.entities.RoomEntity;
 import com.hotelmanagement.models.Room;
 
+import java.text.Normalizer;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class HomeActivity extends AppCompatActivity {
 
     private RecyclerView rvVungTau;
     private RecyclerView rvDaLat;
     private RecyclerView rvQuyNhon;
+    private AppDatabase database;
+
+    private final Locale viLocale = new Locale("vi", "VN");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        database = AppDatabase.getInstance(this);
 
         LinearLayout searchBar = findViewById(R.id.searchBar);
         LinearLayout navProfile = findViewById(R.id.navProfile);
@@ -35,7 +45,6 @@ public class HomeActivity extends AppCompatActivity {
         rvQuyNhon = findViewById(R.id.rvQuyNhon);
 
         setupRecyclerViews();
-        loadRoomData();
 
         searchBar.setOnClickListener(v ->
                 startActivity(new Intent(this, SearchActivity.class)));
@@ -45,6 +54,12 @@ public class HomeActivity extends AppCompatActivity {
 
         navWishlist.setOnClickListener(v ->
                 startActivity(new Intent(this, WishlistActivity.class)));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        loadRoomData();
     }
 
     private void setupRecyclerViews() {
@@ -57,70 +72,76 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void loadRoomData() {
-        List<Room> vungTauList = new ArrayList<>();
-        vungTauList.add(new Room(
-                R.drawable.vungtau_1,
-                "Luxury Suite Vũng Tàu",
-                "2 Người • ★ 4.95",
-                "5.000.000đ",
-                "",
-                false
-        ));
-        vungTauList.add(new Room(
-                R.drawable.vungtau_2,
-                "Ocean View Vũng Tàu",
-                "2 Người • ★ 4.90",
-                "8.000.000đ",
-                "",
-                false
-        ));
-        vungTauList.add(new Room(
-                R.drawable.vungtau_3,
-                "Studio Retreat Vũng Tàu",
-                "2 Người • ★ 4.96",
-                "7.000.000đ",
-                "",
-                false
-        ));
+        rvVungTau.setAdapter(new RoomAdapter(this, getRoomModelsByCity("Vũng Tàu")));
+        rvDaLat.setAdapter(new RoomAdapter(this, getRoomModelsByCity("Đà Lạt")));
+        rvQuyNhon.setAdapter(new RoomAdapter(this, getRoomModelsByCity("Quy Nhơn")));
+    }
 
-        List<Room> daLatList = new ArrayList<>();
-        daLatList.add(new Room(
-                R.drawable.dalat_1,
-                "Skyline Pool Villa Đà Lạt",
-                "4 Người • ★ 4.95",
-                "10.000.000đ",
-                "Được khách yêu thích",
-                false
-        ));
-        daLatList.add(new Room(
-                R.drawable.dalat_2,
-                "Modern Luxury Suite Đà Lạt",
-                "2 Người • ★ 4.95",
-                "6.000.000đ",
-                "Được khách yêu thích",
-                false
-        ));
+    private List<Room> getRoomModelsByCity(String city) {
+        List<RoomEntity> entities = database.roomDao().getPublishedByCity(city);
+        List<Room> rooms = new ArrayList<>();
 
-        List<Room> quyNhonList = new ArrayList<>();
-        quyNhonList.add(new Room(
-                R.drawable.quynhon_1,
-                "Quy Nhơn Beach Hotel",
-                "6 Người • ★ 4.95",
-                "14.000.000đ",
-                "",
-                false
-        ));
-        quyNhonList.add(new Room(
-                R.drawable.quynhon_2,
-                "FLC Luxury Quy Nhơn",
-                "2 Người • ★ 4.95",
-                "3.000.000đ",
-                "",
-                false
-        ));
+        for (RoomEntity entity : entities) {
+            rooms.add(toRoomModel(entity));
+        }
 
-        rvVungTau.setAdapter(new RoomAdapter(this, vungTauList));
-        rvDaLat.setAdapter(new RoomAdapter(this, daLatList));
-        rvQuyNhon.setAdapter(new RoomAdapter(this, quyNhonList));
+        return rooms;
+    }
+
+    private Room toRoomModel(RoomEntity entity) {
+        String title = entity.title == null ? "" : entity.title;
+
+        String meta = entity.maxGuests + " Người";
+        if (entity.rating > 0) {
+            meta += " • ★ " + String.format(Locale.US, "%.2f", entity.rating);
+        } else if (entity.city != null && !entity.city.trim().isEmpty()) {
+            meta += " • " + entity.city.trim();
+        }
+
+        NumberFormat formatter = NumberFormat.getNumberInstance(viLocale);
+        String price = formatter.format(entity.pricePerNight) + "đ / đêm";
+
+        String badge = entity.badge == null ? "" : entity.badge;
+
+        int imageResId = entity.imageResId != 0
+                ? entity.imageResId
+                : getDefaultImageByCity(entity.city);
+
+        return new Room(
+                entity.id,
+                entity.imageUri,
+                imageResId,
+                title,
+                meta,
+                price,
+                badge,
+                false
+        );
+    }
+
+    private int getDefaultImageByCity(String city) {
+        String key = normalizeKey(city);
+
+        if (key.contains("dalat")) {
+            return R.drawable.dalat_1;
+        }
+
+        if (key.contains("quynhon")) {
+            return R.drawable.quynhon_1;
+        }
+
+        return R.drawable.vungtau_1;
+    }
+
+    private String normalizeKey(String value) {
+        if (value == null) {
+            return "";
+        }
+
+        String normalized = Normalizer.normalize(value, Normalizer.Form.NFD);
+        normalized = normalized.replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
+        normalized = normalized.replace("Đ", "D").replace("đ", "d");
+
+        return normalized.toLowerCase(Locale.ROOT).replaceAll("[^a-z]", "");
     }
 }

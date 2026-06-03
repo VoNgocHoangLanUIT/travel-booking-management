@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,9 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.hotelmanagement.R;
 import com.hotelmanagement.adapters.WishlistAdapter;
+import com.hotelmanagement.database.entities.UserEntity;
+import com.hotelmanagement.services.FavoriteService;
+import com.hotelmanagement.services.UserService;
 import com.hotelmanagement.models.Room;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class WishlistActivity extends AppCompatActivity {
@@ -42,32 +45,18 @@ public class WishlistActivity extends AppCompatActivity {
         // Thiết lập RecyclerView
         rvWishlist.setLayoutManager(new LinearLayoutManager(this));
 
-        // Dữ liệu giả lập
-        List<Room> favoriteRooms = new ArrayList<>();
-        favoriteRooms.add(new Room(
-                R.drawable.vungtau_1,
-                "Luxury Suite Vũng Tàu",
-                "Phòng suite sang trọng hướng biển",
-                "5.000.000đ",
-                "Được khách yêu thích",
-                true
-        ));
-        favoriteRooms.add(new Room(
-                R.drawable.dalat_1,
-                "Skyline Pool Villa Đà Lạt",
-                "Biệt thự sân thượng có hồ bơi riêng",
-                "10.000.000đ",
-                "Được khách yêu thích",
-                true
-        ));
-        favoriteRooms.add(new Room(
-                R.drawable.quynhon_1,
-                "Quy Nhơn Beach Hotel",
-                "Phòng view biển cực đẹp",
-                "14.000.000đ",
-                "",
-                true
-        ));
+        FavoriteService favoriteService = new FavoriteService(this);
+        UserService userService = new UserService(this);
+        UserEntity currentUser = userService.getCurrentUser();
+        if (currentUser == null) {
+            Toast.makeText(this, "Vui lòng đăng nhập để xem danh sách yêu thích", Toast.LENGTH_LONG).show();
+            startActivity(new Intent(this, SignInActivity.class));
+            finish();
+            return;
+        }
+        long userId = currentUser.id;
+
+        List<Room> favoriteRooms = favoriteService.getFavoriteRoomModels(userId);
 
         tvWishlistCount.setText(favoriteRooms.size() + " chỗ ở đã lưu");
         rvWishlist.setAdapter(new WishlistAdapter(this, favoriteRooms));

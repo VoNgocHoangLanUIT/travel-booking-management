@@ -1,151 +1,309 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F7F7F7">
+    android:background="#FFFFFF">
 
-    <LinearLayout
+    <!-- Scrollable content -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingStart="16dp"
-        android:paddingTop="40dp"
-        android:paddingEnd="16dp"
-        android:paddingBottom="16dp">
-
-        <ImageView
-            android:id="@+id/btnBackBooking"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/bg_airbnb_circle_light"
-            android:clickable="true"
-            android:focusable="true"
-            android:padding="8dp"
-            android:src="@drawable/ic_back"
-            app:tint="#111111" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:text="Xác nhận và thanh toán"
-            android:textColor="#111111"
-            android:textSize="26sp"
-            android:textStyle="bold" />
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomLayout">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:background="@drawable/bg_airbnb_card"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="20dp">
+
+            <ImageView
+                android:id="@+id/btnBackBooking"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_back"
+                app:tint="#000000"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Thông tin đặt phòng"
-                android:textColor="#111111"
-                android:textSize="17sp"
-                android:textStyle="bold" />
+                android:text="Xác nhận và thanh toán"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="24dp"/>
 
+            <!-- Room info card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/bg_airbnb_card"
+                android:padding="16dp"
+                android:clipToPadding="false"
+                android:elevation="2dp">
+
+                <ImageView
+                    android:id="@+id/ivBookingRoomImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="centerCrop"
+                    android:background="#E0E0E0"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="16dp">
+
+                    <TextView
+                        android:id="@+id/tvBookingRoomTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ngôi nhà siêu xinh"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tvBookingRoomRating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="★ 4,87 (52) • Được khách yêu"
+                        android:textColor="#222222"
+                        android:textSize="14sp"
+                        android:layout_marginTop="8dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EAEAEA"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Trip info -->
             <TextView
-                android:id="@+id/tvBookingRoomTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Skyline Pool Villa"
-                android:textColor="#333333"
-                android:textSize="15sp" />
+                android:text="Chuyến đi của bạn"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginBottom="16dp"/>
 
-            <TextView
-                android:id="@+id/tvBookingStayInfo"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="13 thg 4 - 14 thg 4 • 1 đêm"
-                android:textColor="#717171"
-                android:textSize="14sp" />
+                android:background="@drawable/bg_airbnb_card"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-            <TextView
-                android:id="@+id/tvBookingGuestInfo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="1 khách"
-                android:textColor="#717171"
-                android:textSize="14sp" />
-        </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ngày"
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:id="@+id/tvBookingStayInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="6 – 11 thg 5, 2026"
+                            android:textColor="#444444"
+                            android:textSize="15sp"
+                            android:layout_marginTop="4dp"/>
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/btnChangeBookingDates"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:text="Thay đổi"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:backgroundTint="#F0F0F0"
+                        android:background="@drawable/bg_airbnb_button"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="8dp"/>
+                </RelativeLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:background="@drawable/bg_airbnb_card"
-            android:orientation="vertical"
-            android:padding="16dp">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#EAEAEA"
+                    android:layout_marginBottom="16dp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Khách"
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:id="@+id/tvBookingGuestInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1 người lớn"
+                            android:textColor="#444444"
+                            android:textSize="15sp"
+                            android:layout_marginTop="4dp"/>
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/btnChangeBookingGuests"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:text="Thay đổi"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:backgroundTint="#F0F0F0"
+                        android:background="@drawable/bg_airbnb_button"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="8dp"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EAEAEA"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Chi tiết giá"
-                android:textColor="#111111"
-                android:textSize="17sp"
-                android:textStyle="bold" />
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginBottom="16dp"/>
 
-            <TextView
-                android:id="@+id/tvBookingBasePrice"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="675.848đ x 1 đêm"
-                android:textColor="#555555"
-                android:textSize="14sp" />
+                android:layout_marginBottom="16dp">
+                <TextView
+                    android:id="@+id/tvBookingBasePrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5 đêm x đ1.176.090"
+                    android:textColor="#000000"
+                    android:textSize="16sp"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:text="Phí vệ sinh: 50.000đ"
-                android:textColor="#555555"
-                android:textSize="14sp" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:text="Phí dịch vụ: 20.000đ"
-                android:textColor="#555555"
-                android:textSize="14sp" />
+                    <!-- Original Strikethrough price -->
+                    <TextView
+                        android:id="@+id/tvBookingLineTotalPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="đ25.000.000"
+                        android:textColor="#000000"
+                        android:textSize="16sp"/>
+                </LinearLayout>
+            </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="12dp"
-                android:background="#EAEAEA" />
+                android:background="#EAEAEA"
+                android:layout_marginBottom="16dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tổng VND"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/tvBookingTotalPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="đ5.880.450"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+            </RelativeLayout>
 
             <TextView
-                android:id="@+id/tvBookingTotalPrice"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tổng: 745.848đ"
-                android:textColor="#111111"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:layout_marginTop="8dp"
+                android:text="Chi tiết giá"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/> <!-- Padding for bottom element -->
         </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Action Bar -->
+    <LinearLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:padding="16dp"
+        android:elevation="16dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EAEAEA"
+                android:layout_marginBottom="16dp"/>
 
         <Button
             android:id="@+id/btnConfirmBooking"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:layout_marginTop="26dp"
             android:background="@drawable/bg_airbnb_button"
-            android:text="Xác nhận đặt phòng"
+            android:text="Xác nhận và thanh toán"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
     </LinearLayout>
-</ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

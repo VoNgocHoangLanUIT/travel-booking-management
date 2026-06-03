@@ -70,6 +70,7 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/tvProfileInitials"
                         android:layout_width="64dp"
                         android:layout_height="64dp"
                         android:background="@drawable/bg_airbnb_circle_light"
@@ -86,6 +87,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/tvProfileName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Võ Lan"
@@ -94,6 +96,7 @@
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/tvProfileRole"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Khách du lịch"
@@ -113,13 +116,14 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
                         android:background="@drawable/bg_airbnb_circle_light"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:padding="12dp"
-                        android:layout_marginEnd="8dp">
+                        android:padding="12dp">
 
                         <TextView
+                            android:id="@+id/tvProfileTripCount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="3"
@@ -139,13 +143,14 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
                         android:background="@drawable/bg_airbnb_circle_light"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:padding="12dp"
-                        android:layout_marginEnd="8dp">
+                        android:padding="12dp">
 
                         <TextView
+                            android:id="@+id/tvProfileAverageRating"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="4.8"
@@ -156,9 +161,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Đánh giá"
+                            android:text="★"
                             android:textColor="#717171"
-                            android:textSize="11sp" />
+                            android:textSize="13sp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -171,6 +176,7 @@
                         android:padding="12dp">
 
                         <TextView
+                            android:id="@+id/tvProfileCommentCount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="2"
@@ -188,224 +194,141 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- TRỞ THÀNH HOST CARD -->
+            <LinearLayout
+                android:id="@+id/cardBecomeHost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_airbnb_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_profile_nav"
+                    app:tint="#FF385C" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Trở thành host"
+                        android:textColor="#111111"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Bắt đầu làm host và kiếm thêm thu nhập thật dễ dàng."
+                        android:textColor="#717171"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- QUẢN LÝ HOST CARD -->
+            <LinearLayout
+                android:id="@+id/cardHostDashboard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_airbnb_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_home_nav"
+                    app:tint="#111111" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bảng điều khiển Host"
+                        android:textColor="#111111"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Quản lý khách đặt, theo dõi doanh thu các phòng đang cho thuê."
+                        android:textColor="#717171"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="26dp"
-                android:text="Lịch sử đặt phòng"
-                android:textColor="#333333"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <!-- Booking Item 1 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                android:background="@drawable/bg_airbnb_card"
                 android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="14dp">
-                <androidx.cardview.widget.CardView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    app:cardCornerRadius="14dp"
-                    app:cardElevation="0dp">
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/vungtau_2" />
-                </androidx.cardview.widget.CardView>
-                <LinearLayout
+                android:orientation="horizontal">
+
+                <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="14dp"
                     android:layout_weight="1"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Ocean View Vũng Tàu"
-                        android:textColor="#111111"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-                        <ImageView
-                            android:layout_width="12dp"
-                            android:layout_height="12dp"
-                            android:src="@drawable/ic_calendar"
-                            app:tint="#717171" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="4dp"
-                            android:text="10 thg 7 - 12 thg 7 ·"
-                            android:textColor="#717171"
-                            android:textSize="12sp" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="6dp"
-                            android:background="@drawable/bg_airbnb_chip"
-                            android:paddingHorizontal="8dp"
-                            android:paddingVertical="2dp"
-                            android:text="Đã hoàn thành"
-                            android:textColor="#717171"
-                            android:textSize="10sp" />
-                    </LinearLayout>
-                </LinearLayout>
+                    android:text="Lịch sử đặt phòng"
+                    android:textColor="#333333"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
                 <ImageView
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
+                    android:id="@+id/btnShowAllBookingHistory"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/bg_airbnb_circle_light"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="9dp"
                     android:src="@drawable/ic_arrow_right"
-                    app:tint="#CCCCCC" />
+                    android:visibility="gone"
+                    app:tint="#111111" />
             </LinearLayout>
 
-            <!-- Booking Item 2 -->
-            <LinearLayout
+            <TextView
+                android:id="@+id/tvProfileBookingEmpty"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/bg_airbnb_card"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="14dp">
-                <androidx.cardview.widget.CardView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    app:cardCornerRadius="14dp"
-                    app:cardElevation="0dp">
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/dalat_1" />
-                </androidx.cardview.widget.CardView>
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="14dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Skyline Pool Villa Đà Lạt"
-                        android:textColor="#111111"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-                        <ImageView
-                            android:layout_width="12dp"
-                            android:layout_height="12dp"
-                            android:src="@drawable/ic_calendar"
-                            app:tint="#717171" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="4dp"
-                            android:text="20 thg 8 - 22 thg 8 ·"
-                            android:textColor="#717171"
-                            android:textSize="12sp" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="6dp"
-                            android:background="@drawable/bg_airbnb_button"
-                            android:paddingHorizontal="8dp"
-                            android:paddingVertical="2dp"
-                            android:text="Sắp tới"
-                            android:textColor="#FFFFFF"
-                            android:textSize="10sp" />
-                    </LinearLayout>
-                </LinearLayout>
-                <ImageView
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:src="@drawable/ic_arrow_right"
-                    app:tint="#CCCCCC" />
-            </LinearLayout>
+                android:gravity="center"
+                android:text="Chưa có lịch sử đặt phòng"
+                android:textColor="#777777"
+                android:textSize="14sp"
+                android:visibility="gone" />
 
-            <!-- Booking Item 3 (KHÔI PHỤC) -->
-            <LinearLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvProfileBookingHistory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/bg_airbnb_card"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="14dp">
-                <androidx.cardview.widget.CardView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    app:cardCornerRadius="14dp"
-                    app:cardElevation="0dp">
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/quynhon_2" />
-                </androidx.cardview.widget.CardView>
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="14dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="FLC Luxury Quy Nhơn"
-                        android:textColor="#111111"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-                        <ImageView
-                            android:layout_width="12dp"
-                            android:layout_height="12dp"
-                            android:src="@drawable/ic_calendar"
-                            app:tint="#717171" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="4dp"
-                            android:text="5 thg 9 - 8 thg 9 ·"
-                            android:textColor="#717171"
-                            android:textSize="12sp" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="6dp"
-                            android:background="@drawable/bg_airbnb_button"
-                            android:paddingHorizontal="8dp"
-                            android:paddingVertical="2dp"
-                            android:text="Sắp tới"
-                            android:textColor="#FFFFFF"
-                            android:textSize="10sp" />
-                    </LinearLayout>
-                </LinearLayout>
-                <ImageView
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:src="@drawable/ic_arrow_right"
-                    app:tint="#CCCCCC" />
-            </LinearLayout>
+                android:clipToPadding="false"
+                android:paddingBottom="8dp" />
 
             <!-- NÚT ĐĂNG XUẤT -->
             <Button

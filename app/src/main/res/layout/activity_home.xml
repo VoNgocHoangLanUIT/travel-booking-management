@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:background="#F7F7F7">
 
-    <!-- HEADER CỐ ĐỊNH -->
+    <!-- HEADER -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
             android:background="#E7E7E7" />
     </LinearLayout>
 
-    <!-- PHẦN GIỮA CUỘN -->
+    <!-- BODY -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"

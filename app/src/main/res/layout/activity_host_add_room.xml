@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F7F7"
+    android:orientation="vertical">
+
+    <!-- Top Action Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingTop="40dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp">
+
+        <ImageView
+            android:id="@+id/btnBackHost"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_back"
+            app:tint="#111111" />
+
+        <TextView
+            android:id="@+id/tvHostFormTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:text="Đăng chỗ ở của bạn"
+            android:textColor="#111111"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DDDDDD" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thông tin cơ bản"
+                android:textColor="#111111"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- Tiêu đề phòng -->
+            <EditText
+                android:id="@+id/edtHostTitle"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="16dp"
+            android:background="@drawable/bg_airbnb_card"
+            android:hint="Tên chỗ ở (vd: Biệt thự biển)"
+            android:inputType="textCapSentences"
+            android:paddingHorizontal="16dp"
+            android:textColor="#111111"
+            android:textColorHint="#999999"
+                android:textSize="16sp" />
+
+            <!-- Giá -->
+            <EditText
+                android:id="@+id/edtHostPrice"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_airbnb_card"
+                android:hint="Giá mỗi đêm (VND)"
+                android:inputType="number"
+                android:paddingHorizontal="16dp"
+                android:textColor="#111111"
+                android:textColorHint="#999999"
+                android:textSize="16sp" />
+
+            <!-- Vị trí -->
+            <EditText
+                android:id="@+id/edtHostLocation"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="16dp"
+            android:background="@drawable/bg_airbnb_card"
+            android:hint="Địa chỉ"
+            android:inputType="textCapSentences"
+            android:paddingHorizontal="16dp"
+            android:textColor="#111111"
+            android:textColorHint="#999999"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvHostCity"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_airbnb_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp"
+                android:text="Chọn thành phố"
+                android:textColor="#111111"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Chi tiết bổ sung"
+                android:textColor="#111111"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- Khách tối đa -->
+            <EditText
+                android:id="@+id/edtHostGuests"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_airbnb_card"
+                android:hint="Số khách tối đa"
+                android:inputType="number"
+                android:paddingHorizontal="16dp"
+                android:textColor="#111111"
+                android:textColorHint="#999999"
+                android:textSize="16sp" />
+
+            <!-- Mô tả chung -->
+            <EditText
+                android:id="@+id/edtHostDescription"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="16dp"
+            android:background="@drawable/bg_airbnb_card"
+            android:gravity="top|start"
+            android:hint="Mô tả chi tiết về chỗ ở của bạn..."
+            android:inputType="textMultiLine|textCapSentences"
+            android:padding="16dp"
+            android:textColor="#111111"
+            android:textColorHint="#999999"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvHostServices"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_airbnb_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:paddingHorizontal="16dp"
+                android:text="Chọn dịch vụ / tiện nghi"
+                android:textColor="#111111"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/bg_airbnb_card"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <ImageView
+                    android:id="@+id/ivHostRoomImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:padding="48dp"
+                    android:scaleType="centerInside"
+                    android:src="@android:drawable/ic_menu_camera"
+                    app:tint="#717171"
+                    android:contentDescription="Add image"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Thêm ít nhất 1 hình ảnh"
+                    android:textColor="#717171"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Action Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:elevation="16dp"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/btnSubmitHost"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_airbnb_button"
+            android:text="Lưu &amp; Đăng tin"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>
